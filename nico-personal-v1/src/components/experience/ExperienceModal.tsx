@@ -73,10 +73,11 @@ export function ExperienceModal({ entry, source, onClose }: { entry: ExperienceE
         {entry.selectedWork.length === 0 ? <p>待补充</p> : (['KOL','KOC'] as const).map(category=><div className="work-group" data-category={category} key={category}>
           <h4 className="work-group__heading">SELECTED {category} WORK <span>{category==='KOL'?'商业结果与合作表现':'创意场景与真实体验'}</span></h4>
           <div className="work-group__list">{entry.selectedWork!.filter(work=>work.category===category).map((work,index)=><article className="work-case" key={work.link}>
-            {work.thumbnail && <img className="work-case__thumbnail" src={work.thumbnail} alt={work.title} loading="lazy"/>}
+            {work.thumbnail && <a className={`work-case__cover work-case__cover--${work.coverLayout || 'landscape'}`} href={safeWorkLink(work.link)} target="_blank" rel="noopener noreferrer" aria-label={`观看 ${work.title}（新窗口）`}><img className="work-case__thumbnail" src={work.thumbnail} alt={work.thumbnailAlt || work.title} loading="lazy" width={work.coverLayout==='portrait'?460:1280} height={work.coverLayout==='portrait'?726:720}/><span className="work-case__play" aria-hidden="true">↗</span></a>}
             <div className="work-case__eyebrow"><span>{category} / 0{index+1}</span><span>{work.tag}</span></div>
             <h5>{work.title}</h5><p className="work-case__scene">{work.scene} · {work.platform}</p>
             <p className="work-case__summary">{work.result}</p>
+            {work.tags && <ul className="work-case__tags">{work.tags.map(tag=><li key={tag}>{tag}</li>)}</ul>}
             {work.stats && <ul className="work-case__stats">{work.stats.map(stat=><li key={stat}><mark className="experience-modal__marker">{stat}</mark></li>)}</ul>}
             {work.cost && <p className="work-case__cost">合作成本 {work.cost}</p>}
             {safeWorkLink(work.link) && <a href={safeWorkLink(work.link)} target="_blank" rel="noopener noreferrer" aria-label={`查看 ${work.title}（新窗口）`}>VIEW WORK ↗</a>}

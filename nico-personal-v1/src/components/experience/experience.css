@@ -100,6 +100,15 @@
 .experience-modal__cases .work-case__cost{font-size:12px;margin-bottom:4px}.work-case a{margin-top:18px;padding:9px 0 4px;border-bottom:2px solid var(--modal-accent);font-size:12px;font-weight:650;letter-spacing:.07em;text-decoration:none;color:var(--modal-ink);transition:border-color .18s}
 .work-case a:hover{border-color:var(--nico-pink)}.work-case a:focus-visible{outline:2px solid #526671;outline-offset:5px}.work-case__thumbnail{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:3px;margin-bottom:15px}
 .experience-modal__close{position:sticky;top:0;right:auto;float:right;margin:-20px -24px 0 0;z-index:5;box-shadow:0 2px 8px #2b2b2b12}
+.work-case a:not(.work-case__cover){min-height:44px;display:inline-flex;align-items:center}
+.work-case .work-case__cover{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;border:0;border-radius:4px;margin:0 0 22px;padding:0;background:#eef3f4;isolation:isolate}
+.work-case .work-case__cover--portrait{aspect-ratio:3/4;max-width:400px;align-self:center}
+.work-case__cover .work-case__thumbnail{display:block;width:100%;height:100%;aspect-ratio:auto;margin:0;border-radius:0;object-fit:cover;object-position:center;transition:transform .24s ease,filter .24s ease}
+.work-case__cover--portrait .work-case__thumbnail{object-position:50% 35%}
+.work-case__cover:hover .work-case__thumbnail,.work-case__cover:focus-visible .work-case__thumbnail{transform:scale(1.025);filter:brightness(1.025)}
+.work-case__play{position:absolute;right:12px;bottom:12px;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:#fff;color:var(--modal-ink);font-size:18px}
+.work-case__tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:15px 0 0;font-size:10px;line-height:1.6;letter-spacing:.025em;color:#526671}.work-case__tags li{padding:3px 6px;background:#edf4f7;border-radius:3px}
+@media(prefers-reduced-motion:reduce){.work-case__cover .work-case__thumbnail{transition:none}.work-case__cover:hover .work-case__thumbnail{transform:none}}
 @media(max-width:600px){.work-group[data-category=KOC] .work-group__list{grid-template-columns:1fr}.work-case{padding:18px}.work-case h5{font-size:20px}.work-case__stats{font-size:14px;gap:8px 12px}}
 @media (max-width: 600px) {
   .experience-modal { width: 92vw; max-height: 88dvh; padding: 28px 20px 25px; border-width: 4px; border-radius: 9px; }
