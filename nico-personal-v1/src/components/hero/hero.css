@@ -1,0 +1,58 @@
+.hero-section{height:230vh;position:relative;--head-width:min(70vw,118vh);--fold-shade:0}
+.hero-stage{height:100vh;position:sticky;top:0;perspective:1600px;overflow:clip}
+.hero-type{position:absolute;left:3.3vw;top:4.5vh;margin:0;white-space:nowrap;font-family:var(--hero-font);font-size:clamp(76px,16.4vw,340px);font-weight:800;font-stretch:105%;line-height:.94;letter-spacing:-.07em;z-index:1;opacity:0}
+.hero-type span{display:inline}
+.head-anchor{position:absolute;top:-4vh;left:50%;width:var(--head-width);aspect-ratio:1086/1448;transform:translateX(-50%);z-index:2;pointer-events:none}
+.head-entrance,.head-position,.head-paper,.paper-sheet{position:absolute;inset:0;transform-origin:50% 0;transform-style:preserve-3d}
+.head-entrance{opacity:0}.head-paper{perspective:1700px}
+.live-face{position:absolute;inset:0;z-index:3;mask:url('/assets/nico/nico-head-open.png') center/100% 100% no-repeat;pointer-events:none}
+.canonical-face,.eye-state,.fixed-rim,.head-cap{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform-origin:50% 0}
+.canonical-face,.head-cap{transform:translateY(1.45%) scaleY(.948)}
+.eye-windows{position:absolute;inset:0}
+.eye-window--0{mask:radial-gradient(ellipse 7.2% 2.9% at 36.75% 53.38%,#000 80%,transparent 100%)}
+.eye-window--1{mask:radial-gradient(ellipse 7.5% 2.9% at 65.75% 54%,#000 80%,transparent 100%)}
+.eye-state{visibility:hidden}.eye-state[data-active=true]{visibility:visible}
+.eye-state--left{transform:translateY(1.1%) scaleY(.973)}
+.eye-state--down-left,.eye-state--down-right{transform:translateY(-1.1%)}
+.fixed-rim{mask:linear-gradient(#000 46%,transparent 50%);z-index:2}
+.cap-hinge{position:absolute;inset:0;z-index:5;transform-origin:12% 38%;pointer-events:none}
+.head-cap{clip-path:polygon(0 0,100% 0,100% 50%,0 50%)}
+.brain-pocket{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:auto}
+.brain-object{position:absolute;opacity:0;will-change:transform}
+.brain-float{position:relative;animation:brain-bounce 3s ease-in-out infinite;animation-play-state:paused}
+.hero-section[data-ready=true] .brain-float{animation-play-state:running}
+.brain-hover{display:block;width:100%;padding:0;border:0;background:none;pointer-events:auto;cursor:pointer;transition:transform .35s cubic-bezier(.2,.75,.25,1)}
+.brain-hover img{width:100%;height:auto}
+.brain-primary .brain-hover:hover,.brain-primary .brain-hover:focus-visible{transform:translateY(-12px) scale(1.035)}
+.brain-secondary .brain-hover:hover,.brain-secondary .brain-hover:focus-visible{transform:translateY(-5px) rotate(2deg)}
+.brain-hover:focus-visible{outline:2px dashed var(--nico-black);outline-offset:-10px;border-radius:40%}
+.brain-object:has(.brain-hover:hover) .brain-float{animation-play-state:paused}
+.brain-primary:has(.brain-hover:hover),.brain-primary:has(.brain-hover:focus-visible){z-index:10}
+.brain-object--kol{width:32%;left:52%;top:17.5%;rotate:10deg;z-index:5}
+.brain-object--de-en{width:26.5%;left:35%;top:18.5%;rotate:-4deg;z-index:4}
+.brain-object--ai{width:30%;left:21.5%;top:15.5%;rotate:-10deg;z-index:4}
+.brain-object--brain{width:17%;left:17%;top:25%;rotate:-14deg;z-index:2}
+.brain-object--cloud{width:22%;left:57%;top:16%;rotate:8deg;z-index:1}
+.brain-object--heart{width:14%;right:14%;top:22%;rotate:13deg;z-index:2}
+.brain-object--de-en .brain-float{animation-delay:-1s}
+.brain-object--ai .brain-float{animation-delay:-2s}
+.brain-secondary .brain-float{animation-name:brain-drift;animation-duration:7s;animation-delay:-1s;animation-direction:alternate}
+.panic-paper{position:absolute;inset:0;z-index:6;transform-style:preserve-3d;pointer-events:none}
+.diagonal-paper{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.hero-cue{position:absolute;left:max(28px,3.4vw);bottom:max(28px,4vh);display:flex;align-items:center;gap:10px;margin:0;color:var(--nico-black);font-family:var(--hero-font);font-size:12px;line-height:1.5;letter-spacing:.14em;font-weight:600;z-index:7;opacity:0}.hero-cue span{font-size:16px;line-height:1;font-weight:400;letter-spacing:0}
+.hero-loader{position:fixed;inset:0;background:var(--nico-blue);z-index:100;padding:32px;color:var(--nico-black)}
+.loader-window{height:1em;overflow:hidden;font-family:var(--display-font);font-size:clamp(120px,15.56vw,280px);font-weight:800;line-height:1;letter-spacing:-.085em}
+.loader-number{display:block;width:max-content;min-width:2ch;font-variant-numeric:tabular-nums}
+.loader-error{margin-top:30px;font-size:16px}.loader-error button{margin-left:16px;border:1px solid;padding:12px;background:var(--nico-white)}
+@keyframes brain-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.brain-label{position:absolute;top:var(--label-y,12%);left:var(--label-x,50%);width:max-content;max-width:none;white-space:nowrap;padding:8px 13px;border-radius:30px;background:var(--nico-white);color:var(--nico-black);font-size:clamp(12px,1.05vw,18px);font-weight:650;line-height:1.25;letter-spacing:0;opacity:0;visibility:hidden;transform:translate(-50%,-80%);transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none;z-index:8}
+.brain-object--kol .brain-label{rotate:-12deg}.brain-object--de-en .brain-label{rotate:4deg}.brain-object--ai .brain-label{rotate:10deg}
+.brain-float:has(.brain-hover:hover) .brain-label,.brain-float:has(.brain-hover:focus-visible) .brain-label{opacity:1;visibility:visible;transform:translate(-50%,-100%)}
+@keyframes brain-drift{from{transform:translateY(-3px) rotate(-.5deg)}to{transform:translateY(3px) rotate(.5deg)}}
+@media(max-width:700px){
+ .hero-section{--head-width:140vw;height:220vh}.head-anchor{top:28vh}
+ .hero-type{top:8vh;font-size:14.8vw;font-stretch:100%;line-height:.96}
+ .hero-cue{font-size:11px;bottom:3vh}.hero-loader{padding:24px}
+ .brain-object--brain{left:17%;top:25%;z-index:2}.brain-object--cloud{left:57%;top:16%}
+}
+@media(prefers-reduced-motion:reduce){.brain-float{animation:none}.brain-hover{transition:none}}

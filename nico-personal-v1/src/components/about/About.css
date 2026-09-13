@@ -1,0 +1,130 @@
+.nico-about-flow {
+  position: relative;
+  color: var(--nico-black, #292929);
+  background: transparent;
+}
+
+.nico-intro {
+  position: relative;
+  padding: clamp(90px, 12vh, 160px) 4vw clamp(90px, 13vh, 160px);
+}
+
+.nico-intro__statement {
+  width: 100%;
+  margin: 0 auto;
+  font-family: var(--body-font);
+  font-size: clamp(40px, 5.6vw, 106px);
+  font-weight: 750;
+  line-height: 1.28;
+  letter-spacing: -0.065em;
+  text-align: center;
+}
+
+.nico-intro__line { display: block; }
+.nico-identity {
+  position: absolute;
+  top: 2vh;
+  left: 3.3vw;
+  margin: 0;
+  padding: 0 .18em;
+  color: var(--nico-black);
+  font-size: clamp(22px, 2.36vw, 38px);
+  font-weight: 750;
+  letter-spacing: .1em;
+  line-height: 1.4;
+  isolation: isolate;
+}
+.nico-identity::before {
+  content: '';
+  position: absolute;
+  inset: 61% -.04em 2%;
+  z-index: -1;
+  background: color-mix(in srgb, var(--nico-pink) 54%, transparent);
+  transform: skewX(-8deg);
+}
+.nico-intro__line--second { margin-top: 0.7em; font-weight: 550; }
+
+.nico-intro__statement mark {
+  display: inline-block;
+  padding: 0 0.15em 0.025em;
+  color: var(--nico-black, #292929);
+  background: var(--nico-pink, #f39bbc);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  transform: rotate(-3deg);
+}
+
+.nico-intro__ai { position: relative; cursor: default; }
+.nico-intro__ai:focus-visible { outline: 2px solid var(--nico-black); outline-offset: 5px; }
+.nico-intro__heart {
+  position: absolute;
+  width: .98em;
+  height: .98em;
+  object-fit: contain;
+  left: var(--heart-x, 50%);
+  top: var(--heart-y, 50%);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.78) rotate(9deg);
+  transition: opacity 160ms ease, transform 180ms ease;
+}
+.nico-intro__ai:hover .nico-intro__heart,
+.nico-intro__ai:focus-visible .nico-intro__heart {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(9deg);
+}
+
+.nico-life {
+  position: relative;
+  height: max(110vh, 75vw);
+  max-height: 1460px;
+  margin: 0 auto;
+  width: min(100%, 1920px);
+}
+
+.nico-life__photo {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border-radius: clamp(16px, 1.45vw, 28px);
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 6px 16px rgb(41 41 41 / 7%);
+  transform-origin: 50% 50%;
+}
+
+.nico-life__photo img { display: block; width: 100%; height: auto; }
+.nico-life__photo--1 { top: 12%; left: 20%; width: 17%; rotate: -6deg; z-index: 1; }
+.nico-life__photo--2 { top: 10%; right: 22%; width: 15%; rotate: 7deg; z-index: 2; }
+.nico-life__photo--3 { top: 58%; left: 23%; width: 14%; rotate: -8deg; z-index: 2; }
+.nico-life__photo--4 { top: 59%; right: 19%; width: 19%; rotate: 3deg; z-index: 1; }
+.nico-life__object { position: absolute; display: block; height: auto; object-fit: contain; }
+.nico-life__object--dalian { left: 50%; top: 30%; width: 28%; margin-left: -14%; rotate: -3deg; z-index: 5; }
+.nico-life__object--dumbbell { left: 16%; top: 39%; width: 16%; rotate: -13deg; z-index: 3; }
+.nico-life__object--basketball { right: 16%; top: 43%; width: 12%; rotate: 11deg; z-index: 4; }
+.nico-life__object--gaming { left: 43%; top: 72%; width: 14%; rotate: 5deg; z-index: 4; }
+.nico-life__object-hover { transition: transform 220ms ease, filter 220ms ease; filter: drop-shadow(0 3px 4px rgb(41 41 41 / 5%)); }
+.nico-life__object-hover img,.nico-life__object-hover svg { display:block; width:100%; height:auto; }
+@media (hover:hover) { .nico-life__object-hover:hover { transform:translateY(-4px) scale(1.025) rotate(.6deg); filter:drop-shadow(0 6px 7px rgb(41 41 41 / 11%)); } }
+
+@media (max-width: 700px) {
+  .nico-intro { padding: 72px 5vw 80px; }
+  .nico-intro__statement { font-size: clamp(26px, 6.8vw, 47px); letter-spacing: -0.065em; line-height: 1.45; }
+  .nico-intro__line:last-child { max-width: 13em; margin-inline: auto; }
+  .nico-life { height: max(180vw, 105svh); max-height: none; }
+  .nico-life__photo--1 { top: 7%; left: 13%; width: 27%; }
+  .nico-life__photo--2 { top: 10%; right: 12%; width: 23%; }
+  .nico-life__photo--3 { top: 57%; left: 12%; width: 22%; }
+  .nico-life__photo--4 { top: 61%; right: 10%; width: 30%; }
+  .nico-life__object--dalian { top: 32%; width: 40%; margin-left: -20%; }
+  .nico-life__object--dumbbell { left: 6%; top: 36%; width: 24%; }
+  .nico-life__object--basketball { right: 5%; top: 46%; width: 19%; }
+  .nico-life__object--gaming { left: 38%; top: 77%; width: 23%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nico-life__photo { will-change: auto; }
+  .nico-intro__heart { transition: none; }
+  .nico-life__object-hover { transition:none; }
+}

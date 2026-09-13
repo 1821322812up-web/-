@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.design-tools/
+tmp/pdfs/
+tmp/
+*.tsbuildinfo
+*.log
+.env
+.env.*
+!.env.example
+.vercel/
+docs/qa/
+docs/research/
+docs/design-references/
