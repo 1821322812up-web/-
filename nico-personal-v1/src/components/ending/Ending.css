@@ -3,9 +3,8 @@
 .nico-ending__motto{margin:0;font-size:clamp(68px,10vw,180px);font-weight:800;line-height:1.18;letter-spacing:-.055em;text-align:center}
 .nico-ending__motto>span{display:block;white-space:nowrap}.nico-ending__motto em{color:var(--nico-pink);font-style:normal}
 .nico-ending__contacts{position:absolute;right:6vw;bottom:7vh;margin:0;display:grid;gap:14px;font-size:16px;line-height:1.6}
-.nico-ending__contact{display:grid;grid-template-columns:72px 1fr;gap:18px;align-items:baseline}.nico-ending__contact dt{font-size:12px;letter-spacing:.1em}.nico-ending__contact dd{margin:0}
-.nico-ending__contact a,.nico-ending__contact button{border:0;padding:3px 0;background:none;color:inherit;text-decoration:none;font:inherit;cursor:pointer;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
-.nico-ending__contact a:hover,.nico-ending__contact button:hover{border-color:var(--nico-pink);color:#bf657f;text-shadow:none}
+.nico-ending__contact{display:grid;grid-template-columns:auto auto;gap:16px;align-items:baseline}.nico-ending__contact dt{font-size:12px;letter-spacing:.1em}.nico-ending__contact dd{margin:0}
+.nico-ending__contact a{border:0;padding:3px 0;background:none;color:inherit;text-decoration:none;font:inherit;cursor:pointer;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.nico-ending__contact a:hover{border-color:var(--nico-pink);color:#bf657f;text-shadow:none}
 .nico-ending__contact :focus-visible{outline:1px dashed #647f92;outline-offset:5px}
-.nico-ending__copy-status{position:absolute;right:6vw;bottom:3vh;font-size:12px;color:#526e81}
-@media(max-width:700px){.nico-ending,.nico-ending__content{min-height:100svh}.nico-ending__content{padding:12vh 5vw 30vh}.nico-ending__motto{font-size:12.6vw;line-height:1.3}.nico-ending__contacts{font-size:15px;right:7vw;bottom:8vh}.nico-ending__copy-status{right:7vw}}
+@media(max-width:700px){.nico-ending,.nico-ending__content{min-height:100svh}.nico-ending__content{padding:12vh 5vw 30vh}.nico-ending__motto{font-size:12.6vw;line-height:1.3}.nico-ending__contacts{font-size:15px;right:7vw;bottom:8vh}}
